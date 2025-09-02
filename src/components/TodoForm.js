@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 
-export const TodoForm = (addTodo) => {
+export const TodoForm = ({addTodo}) => {
     const [value, setValue] = useState("")
 
     const handleSubmit = e => {
-        e.prventDefault() //阻止页面刷新
+        e.preventDefault() //阻止页面刷新
 
         addTodo(value)
 
@@ -14,7 +14,7 @@ export const TodoForm = (addTodo) => {
   return (
     <form className='TodoForm' onSubmit={handleSubmit}>
         <input type="text" className='todo-input' 
-        placeholder='What is the task today' 
+        placeholder='What is the task today?' 
         value={value}
         onChange={(e) => setValue(e.target.value)}/>
         <button type='submit' className='todo-btn'>Add 
