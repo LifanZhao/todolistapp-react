@@ -6,7 +6,8 @@ export const TodoForm = ({addTodo}) => {
     const handleSubmit = e => {
         e.preventDefault() //阻止页面刷新
 
-        addTodo(value)
+        if(!value.trim()) return
+        addTodo(value.trim())
 
         setValue("")
     }

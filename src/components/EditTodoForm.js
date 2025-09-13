@@ -6,7 +6,8 @@ export const EditTodoForm = ({editTodo, task}) => {
     const handleSubmit = e => {
         e.preventDefault() //阻止页面刷新
 
-        editTodo(value, task.id);
+        if(!value.trim()) return
+        editTodo(value.trim(), task.id);
 
         setValue("")
     }
